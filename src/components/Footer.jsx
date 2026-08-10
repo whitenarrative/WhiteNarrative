@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { navLinks, site } from '../data/content.js'
 import Icon from './Icon.jsx'
 import Logo from './Logo.jsx'
@@ -21,12 +22,12 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <ul>
             {navLinks.map((l) => (
-              <li key={l.href}>
-                <a href={l.href}>{l.label}</a>
+              <li key={l.to}>
+                <Link to={l.to}>{l.label}</Link>
               </li>
             ))}
             <li>
-              <a href="#contact">Contact</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
@@ -36,17 +37,17 @@ export default function Footer() {
           <ul>
             <li>
               <a href={`mailto:${site.email}`}>
-                <Icon name="mail" size={15} /> {site.email}
+                <Icon name="mail" size={14} /> {site.email}
               </a>
             </li>
             <li>
               <a href={`tel:${site.phone.replace(/\s/g, '')}`}>
-                <Icon name="phone" size={15} /> {site.phone}
+                <Icon name="phone" size={14} /> {site.phone}
               </a>
             </li>
             <li>
               <span>
-                <Icon name="pin" size={15} /> {site.location}
+                <Icon name="pin" size={14} /> {site.location}
               </span>
             </li>
           </ul>
@@ -57,7 +58,7 @@ export default function Footer() {
           <div className="footer__socials">
             {site.socials.map((s) => (
               <a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.name}>
-                <Icon name={s.icon} size={18} />
+                <Icon name={s.icon} size={16} />
               </a>
             ))}
           </div>

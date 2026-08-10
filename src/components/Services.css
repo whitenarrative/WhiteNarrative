@@ -1,147 +1,44 @@
 .services {
-  padding: 110px 0;
-  background:
-    radial-gradient(60% 50% at 10% 10%, rgba(210, 164, 78, 0.05), transparent 60%),
-    var(--bg-soft);
-  border-top: 1px solid var(--line-soft);
+  padding: 90px 0;
+  border-top: 1px solid var(--line);
 }
 
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 56px;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 48px;
 }
 
 .services__card {
-  --tint: 210, 164, 78;
-  border: 1px solid var(--line-soft);
-  border-radius: 8px;
-  background: var(--surface);
-  overflow: hidden;
-  transition:
-    transform 0.45s var(--ease),
-    border-color 0.45s var(--ease),
-    box-shadow 0.45s var(--ease);
+  display: block;
+  background: var(--bg);
+  padding: 30px 26px 28px;
+  color: var(--gold);
+  transition: background-color 0.25s var(--ease);
 }
 
 .services__card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(var(--tint), 0.45);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  background: var(--surface);
 }
 
-.services__card--amber { --tint: 224, 164, 74; }
-.services__card--copper { --tint: 214, 126, 68; }
-.services__card--teal { --tint: 96, 178, 168; }
-.services__card--bronze { --tint: 186, 148, 92; }
-.services__card--crimson { --tint: 212, 98, 92; }
-.services__card--violet { --tint: 158, 116, 212; }
-
-/* film-still area */
-.services__still {
-  position: relative;
-  height: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(200deg, rgba(var(--tint), 0.16), rgba(var(--tint), 0.03) 55%, transparent),
-    linear-gradient(170deg, #191309, #0e0b06);
-  overflow: hidden;
-}
-
-.services__still-glow {
-  position: absolute;
-  width: 70%;
-  height: 130%;
-  top: -55%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--tint), 0.3), transparent 65%);
-  filter: blur(14px);
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
-  opacity: 0.7;
-}
-
-.services__card:hover .services__still-glow {
-  opacity: 1;
-  transform: scale(1.15);
-}
-
-.services__still-icon {
-  position: relative;
-  color: rgba(var(--tint), 0.85);
-  filter: drop-shadow(0 6px 24px rgba(var(--tint), 0.4));
-  transition: transform 0.5s var(--ease);
-}
-
-.services__card:hover .services__still-icon {
-  transform: scale(1.08) translateY(-2px);
-}
-
-.services__sprockets {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent 0 8px,
-    rgba(11, 9, 6, 0.85) 8px 20px
-  );
-  opacity: 0.55;
-}
-
-.services__sprockets--top { top: 6px; }
-.services__sprockets--bottom { bottom: 6px; }
-
-/* body */
-.services__body {
-  padding: 24px 24px 26px;
-}
-
-.services__body h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.services__card h3 {
+  margin-top: 20px;
   font-family: var(--font-head);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--ink);
 }
 
-.services__body h3 svg {
-  color: rgb(var(--tint));
-  flex-shrink: 0;
-}
-
-.services__body p {
-  margin-top: 12px;
-  font-size: 14px;
+.services__card p {
+  margin-top: 10px;
+  font-size: 13.5px;
   color: var(--muted);
-  line-height: 1.65;
-  min-height: 68px;
-}
-
-.services__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  font-family: var(--font-head);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: 0.75;
-  transition: opacity 0.3s var(--ease), gap 0.3s var(--ease);
-}
-
-.services__card:hover .services__link {
-  opacity: 1;
-  gap: 12px;
+  line-height: 1.6;
 }
 
 @media (max-width: 980px) {
@@ -152,14 +49,10 @@
 
 @media (max-width: 640px) {
   .services {
-    padding: 84px 0;
+    padding: 70px 0;
   }
 
   .services__grid {
     grid-template-columns: 1fr;
-  }
-
-  .services__body p {
-    min-height: 0;
   }
 }

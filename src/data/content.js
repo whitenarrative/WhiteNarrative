@@ -13,12 +13,12 @@ export const site = {
 }
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'The Challenge', href: '#challenge' },
-  { label: 'Our Journey', href: '#journey' },
-  { label: 'What We Do', href: '#services' },
-  { label: 'Our Work', href: '#work' },
-  { label: 'Meet The Team', href: '#team' },
+  { label: 'Home', to: '/' },
+  { label: 'The Challenge', to: '/#challenge' },
+  { label: 'Our Journey', to: '/#journey' },
+  { label: 'What We Do', to: '/#services' },
+  { label: 'Our Work', to: '/work' },
+  { label: 'Meet The Team', to: '/#team' },
 ]
 
 export const hero = {
@@ -78,77 +78,42 @@ export const journey = {
       icon: 'bulb',
       title: 'A Story Is Born',
       copy: 'Every film begins as a thought. We help transform raw ideas into productions audiences remember.',
-      chips: [
-        { icon: 'spark', label: 'Concept Development' },
-        { icon: 'chat', label: 'Script Consultation' },
-        { icon: 'compass', label: 'Creative Planning' },
-        { icon: 'board', label: 'Mood Boards' },
-      ],
+      chips: ['Concept Development', 'Script Consultation', 'Creative Planning', 'Mood Boards'],
     },
     {
       num: '02',
       icon: 'pen',
       title: 'Ideas Need Structure',
       copy: 'A great story needs the right foundation. We shape ideas into powerful narratives and solid plans.',
-      chips: [
-        { icon: 'pen', label: 'Story Development' },
-        { icon: 'script', label: 'Screenplay Writing' },
-        { icon: 'search', label: 'Research & References' },
-        { icon: 'calendar', label: 'Pre-Production Planning' },
-      ],
+      chips: ['Story Development', 'Screenplay Writing', 'Research & References', 'Pre-Production Planning'],
     },
     {
       num: '03',
       icon: 'users',
       title: 'Stories Need People',
       copy: 'The right people bring your story to life. We build the perfect cast and crew for your vision.',
-      chips: [
-        { icon: 'star', label: 'Casting' },
-        { icon: 'users', label: 'Crew Selection' },
-        { icon: 'pin', label: 'Location Scouting' },
-        { icon: 'layers', label: 'Production Design' },
-        { icon: 'costume', label: 'Costume Planning' },
-      ],
+      chips: ['Casting', 'Crew Selection', 'Location Scouting', 'Production Design', 'Costume Planning'],
     },
     {
       num: '04',
       icon: 'clapper',
       title: 'Lights. Camera. Action.',
       copy: 'Where preparation meets performance. Disciplined sets, creative freedom, and every frame with intent.',
-      chips: [
-        { icon: 'clapper', label: 'Direction' },
-        { icon: 'camera', label: 'Cinematography' },
-        { icon: 'light', label: 'Lighting' },
-        { icon: 'layers', label: 'Art Direction' },
-        { icon: 'mic', label: 'Sound Recording' },
-      ],
+      chips: ['Direction', 'Cinematography', 'Lighting', 'Art Direction', 'Sound Recording'],
     },
     {
       num: '05',
       icon: 'monitor',
       title: 'Where Stories Come Alive',
       copy: 'The edit room is where rhythm, colour and sound turn footage into a cinematic experience.',
-      chips: [
-        { icon: 'cut', label: 'Editing' },
-        { icon: 'palette', label: 'Color Grading' },
-        { icon: 'wand', label: 'VFX' },
-        { icon: 'wave', label: 'Sound Design' },
-        { icon: 'music', label: 'Music & Mix' },
-        { icon: 'film', label: 'DI & Mastering' },
-      ],
+      chips: ['Editing', 'Color Grading', 'VFX', 'Sound Design', 'Music & Mix', 'DI & Mastering'],
     },
     {
       num: '06',
       icon: 'megaphone',
       title: 'Every Story Deserves An Audience',
       copy: 'We take your film beyond completion — into festivals, platforms, theatres and the world.',
-      chips: [
-        { icon: 'play', label: 'Trailer Editing' },
-        { icon: 'board', label: 'Poster Design' },
-        { icon: 'award', label: 'Festival Strategy' },
-        { icon: 'megaphone', label: 'Digital Campaigns' },
-        { icon: 'globe', label: 'Distribution Support' },
-      ],
+      chips: ['Trailer Editing', 'Poster Design', 'Festival Strategy', 'Digital Campaigns', 'Distribution Support'],
     },
   ],
 }
@@ -163,37 +128,31 @@ export const services = {
       icon: 'film',
       title: 'Feature Films',
       copy: 'From development to theatrical-ready production — stories built to leave a lasting impact.',
-      tint: 'amber',
     },
     {
       icon: 'clapper',
       title: 'Short Films',
       copy: 'Bold, festival-ready films that make a powerful statement in a handful of minutes.',
-      tint: 'copper',
     },
     {
       icon: 'tv',
       title: 'Web Series',
       copy: 'Episodic storytelling that hooks audiences from the cold open to the season finale.',
-      tint: 'teal',
     },
     {
       icon: 'briefcase',
       title: 'Corporate Films',
       copy: "Your brand's story told with purpose, clarity and cinematic craft.",
-      tint: 'bronze',
     },
     {
       icon: 'spark',
       title: 'Ad Films',
       copy: 'Creative campaigns that grab attention in seconds — and drive real results.',
-      tint: 'crimson',
     },
     {
       icon: 'music',
       title: 'Music Videos',
       copy: 'Stunning visual experiences that elevate the music and stay with the listener.',
-      tint: 'violet',
     },
   ],
 }
@@ -239,6 +198,15 @@ export const stats = [
   { icon: 'globe', value: 5, suffix: '', label: 'Countries Reached' },
 ]
 
+export const workCategories = [
+  'Feature Film',
+  'Short Film',
+  'Web Series',
+  'Corporate Film',
+  'Ad Film',
+  'Music Video',
+]
+
 export const work = {
   id: 'work',
   eyebrow: 'Our Work',
@@ -250,42 +218,36 @@ export const work = {
       category: 'Feature Film',
       year: '2025',
       note: 'A father-daughter drama shot across 40 days in coastal Karnataka — developed with us from a two-page idea.',
-      scene: 'poster-a',
     },
     {
       title: 'The Last Train',
       category: 'Short Film',
       year: '2025',
       note: 'A single-location thriller crafted for the festival circuit — 20+ official selections and counting.',
-      scene: 'poster-b',
     },
     {
       title: 'Fault Lines',
       category: 'Web Series',
       year: '2024',
       note: 'Six-episode ensemble drama — casting, production and post handled end-to-end by our team.',
-      scene: 'poster-c',
     },
     {
       title: 'Inspire',
       category: 'Corporate Film',
       year: '2024',
       note: 'A founder-story brand film that turned an internal milestone into a public moment.',
-      scene: 'poster-d',
     },
     {
       title: 'Ignite',
       category: 'Ad Film',
       year: '2024',
       note: 'A 40-second launch campaign, from script to broadcast master in three weeks.',
-      scene: 'poster-e',
     },
     {
       title: 'Chase The Light',
       category: 'Music Video',
       year: '2023',
       note: 'A one-night neon chase through the city — planned to the minute, shot before sunrise.',
-      scene: 'poster-f',
     },
   ],
 }
@@ -347,23 +309,22 @@ export const testimonials = {
   partners: ['Google', 'TATA', 'Swiggy', 'Sony Music', 'OLA'],
 }
 
-export const bts = {
-  id: 'bts',
-  eyebrow: 'Behind The Scenes',
-  title: ['The passion behind', 'every production.'],
-  sub: 'Films are made long before the première — in rehearsals, recces, lighting tests and late-night edit sessions.',
-  moments: [
-    { icon: 'users', label: 'Table Reads & Rehearsals', scene: 'bts-a', size: 'wide' },
-    { icon: 'light', label: 'Lighting Setups', scene: 'bts-b', size: '' },
-    { icon: 'camera', label: 'On-Set Moments', scene: 'bts-c', size: '' },
-    { icon: 'monitor', label: 'Edit Sessions', scene: 'bts-d', size: '' },
-    { icon: 'chat', label: 'Production Meetings', scene: 'bts-e', size: 'wide' },
-  ],
-}
-
 export const finalCta = {
-  id: 'contact',
   titleLines: ['Your story already exists.', "Let's frame it forever."],
   copy: "Tell us what you're dreaming of — a film, a series, a campaign — and we'll help you take the first step.",
-  button: 'Start Your Production',
+  button: 'Get In Touch',
+}
+
+export const workPage = {
+  eyebrow: 'Gallery',
+  title: ['Every project,', 'one archive.'],
+  sub: 'Browse by format, or see everything we have framed — features, shorts, series, brand films and music videos.',
+}
+
+export const contactPage = {
+  eyebrow: 'Contact',
+  title: ['Tell us about', 'your project.'],
+  sub: "Share a few details and we'll get back to you within 1–2 business days.",
+  projectTypes: ['Feature Film', 'Short Film', 'Web Series', 'Corporate Film', 'Ad Film', 'Music Video', 'Other'],
+  detailsTitle: 'Reach Us Directly',
 }

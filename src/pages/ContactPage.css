@@ -1,0 +1,123 @@
+.contact-page {
+  padding: calc(var(--nav-h) + 56px) 0 110px;
+}
+
+.contact-page__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  margin-top: 50px;
+}
+
+.contact-page__details {
+  border-left: 1px solid var(--line);
+  padding-left: 44px;
+}
+
+.contact-page__details h2 {
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.contact-page__details ul {
+  list-style: none;
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-page__details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-page__details li svg {
+  color: var(--gold);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.contact-page__details li div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-page__details li span {
+  font-family: var(--font-head);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.contact-page__details li a,
+.contact-page__details li p {
+  font-size: 14.5px;
+  color: var(--ink);
+}
+
+.contact-page__socials {
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-page__socials > span {
+  font-family: var(--font-head);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.contact-page__socials > div {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.contact-page__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--gold);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.contact-page__socials a:hover {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+@media (max-width: 880px) {
+  .contact-page__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-page__details {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-page {
+    padding: calc(var(--nav-h) + 40px) 0 80px;
+  }
+}

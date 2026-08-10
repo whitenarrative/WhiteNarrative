@@ -18,22 +18,15 @@ export default function Challenge() {
 
         <div className="challenge__grid">
           {challenge.items.map((item, i) => (
-            <article key={item.title} className="challenge__card reveal" style={{ '--d': `${i * 0.08}s` }}>
-              <span className="challenge__num">{String(i + 1).padStart(2, '0')}</span>
-              <span className="challenge__icon">
-                <Icon name={item.icon} size={26} />
-              </span>
+            <article key={item.title} className="challenge__card reveal" style={{ '--d': `${i * 0.06}s` }}>
+              <Icon name={item.icon} size={20} strokeWidth={1.4} />
               <h3>{item.title}</h3>
               <p>{item.copy}</p>
             </article>
           ))}
         </div>
 
-        <p className="challenge__resolution reveal">
-          <span className="challenge__resolution-line" aria-hidden="true" />
-          {challenge.resolution}
-          <span className="challenge__resolution-line" aria-hidden="true" />
-        </p>
+        <p className="challenge__resolution reveal">{challenge.resolution}</p>
       </div>
     </section>
   )

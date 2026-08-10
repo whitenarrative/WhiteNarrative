@@ -13,7 +13,7 @@ export default function Team() {
     <section id={team.id} className="team" aria-label="Meet the team">
       <div className="container">
         <div className="section-head section-head--center reveal">
-          <p className="eyebrow eyebrow--lined">{team.eyebrow}</p>
+          <p className="eyebrow">{team.eyebrow}</p>
           <h2 className="display">
             {team.title[0]} <em>{team.title[1]}</em>
           </h2>
@@ -24,7 +24,6 @@ export default function Team() {
           {team.members.map((m, i) => (
             <article key={m.name} className="team__card reveal" style={{ '--d': `${i * 0.09}s` }}>
               <div className="team__portrait" aria-hidden="true">
-                <span className="team__ring" />
                 <span className="team__initials display">{initials(m.name)}</span>
               </div>
               <h3>{m.name}</h3>

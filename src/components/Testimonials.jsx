@@ -6,7 +6,7 @@ export default function Testimonials() {
     <section id={testimonials.id} className="testimonials" aria-label="Testimonials and partners">
       <div className="container">
         <div className="section-head section-head--center reveal">
-          <p className="eyebrow eyebrow--lined">{testimonials.eyebrow}</p>
+          <p className="eyebrow">{testimonials.eyebrow}</p>
           <h2 className="display">
             {testimonials.title[0]}
             <br />
@@ -16,17 +16,11 @@ export default function Testimonials() {
 
         <div className="testimonials__grid">
           {testimonials.items.map((t, i) => (
-            <figure key={t.name} className="testimonials__card reveal" style={{ '--d': `${i * 0.1}s` }}>
-              <span className="testimonials__mark" aria-hidden="true">“</span>
+            <figure key={t.name} className="testimonials__card reveal" style={{ '--d': `${i * 0.07}s` }}>
               <blockquote>{t.quote}</blockquote>
               <figcaption>
-                <span className="testimonials__avatar" aria-hidden="true">
-                  {t.name[0]}
-                </span>
-                <span>
-                  <strong>{t.name}</strong>
-                  <em>{t.role}</em>
-                </span>
+                <strong>{t.name}</strong>
+                <span>{t.role}</span>
               </figcaption>
             </figure>
           ))}
