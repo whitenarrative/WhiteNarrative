@@ -1,0 +1,113 @@
+.challenge {
+  padding: 110px 0 90px;
+  background:
+    radial-gradient(70% 60% at 85% 0%, rgba(210, 164, 78, 0.05), transparent 60%),
+    var(--bg-soft);
+  border-top: 1px solid var(--line-soft);
+}
+
+.challenge__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  gap: 18px;
+  margin-top: 56px;
+}
+
+.challenge__card {
+  position: relative;
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  background: linear-gradient(170deg, var(--surface), rgba(21, 17, 10, 0.4));
+  padding: 28px 22px 26px;
+  overflow: hidden;
+  transition:
+    transform 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    background-color 0.4s var(--ease);
+}
+
+.challenge__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(210, 164, 78, 0.4);
+}
+
+.challenge__card:hover .challenge__icon {
+  background: rgba(210, 164, 78, 0.14);
+  color: var(--gold-bright);
+}
+
+.challenge__num {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: rgba(210, 164, 78, 0.12);
+  letter-spacing: 0.04em;
+}
+
+.challenge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(210, 164, 78, 0.06);
+  color: var(--gold);
+  transition:
+    background-color 0.4s var(--ease),
+    color 0.4s var(--ease);
+}
+
+.challenge__card h3 {
+  margin-top: 20px;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.challenge__card p {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.challenge__resolution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  margin-top: 64px;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 32px);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gold-bright);
+  text-align: center;
+}
+
+.challenge__resolution-line {
+  flex: 0 1 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+@media (max-width: 640px) {
+  .challenge {
+    padding: 80px 0 70px;
+  }
+
+  .challenge__resolution {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .challenge__resolution-line {
+    width: 90px;
+  }
+}
