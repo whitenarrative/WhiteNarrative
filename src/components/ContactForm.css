@@ -63,6 +63,10 @@
   background-size: 16px;
 }
 
+:root[data-theme='light'] .contact-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%235c564a' stroke-width='1.6'%3E%3Cpath d='m5 8 5 5 5-5'/%3E%3C/svg%3E");
+}
+
 .contact-form textarea {
   resize: vertical;
   min-height: 120px;

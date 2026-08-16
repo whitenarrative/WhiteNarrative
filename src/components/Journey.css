@@ -12,7 +12,7 @@
 
 .journey__stage {
   display: grid;
-  grid-template-columns: 60px minmax(240px, 1fr) 1.4fr;
+  grid-template-columns: 34px minmax(240px, 1fr) 1.4fr;
   gap: clamp(20px, 4vw, 48px);
   padding: 40px 0;
   border-bottom: 1px solid var(--line);

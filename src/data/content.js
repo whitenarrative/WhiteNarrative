@@ -1,8 +1,13 @@
+const whatsappNumber = '919035627036'
+const whatsappMessage = "Hi White Narrative, I'd like to talk about a project."
+
 export const site = {
   name: 'White Narrative',
   tagline: 'Stories Framed Forever',
   email: 'hello@whitenarrative.studio',
-  phone: '+91 98765 43210',
+  phone: '+91 90356 27036',
+  whatsapp: whatsappNumber,
+  whatsappLink: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
   location: 'Bangalore, India',
   socials: [
     { name: 'Instagram', icon: 'instagram', href: 'https://instagram.com' },
@@ -28,8 +33,8 @@ export const hero = {
   tagline: 'Stories Framed Forever',
   copy: "Whether it's a feature film, short film, web series, advertisement or music video — White Narrative brings ideas to life, from concept to release.",
   formats: ['Feature Films', 'Short Films', 'Web Series', 'Corporate Films', 'Ad Films', 'Music Videos'],
-  ctaPrimary: 'Start Your Story',
-  ctaSecondary: 'Watch Our Reel',
+  ctaPrimary: 'Chat On WhatsApp',
+  ctaSecondary: 'See Our Work',
 }
 
 export const challenge = {
@@ -74,42 +79,42 @@ export const journey = {
   sub: 'Every production moves through six chapters. We stand beside you in all of them.',
   stages: [
     {
-      num: '01',
+      num: '1',
       icon: 'bulb',
       title: 'A Story Is Born',
       copy: 'Every film begins as a thought. We help transform raw ideas into productions audiences remember.',
       chips: ['Concept Development', 'Script Consultation', 'Creative Planning', 'Mood Boards'],
     },
     {
-      num: '02',
+      num: '2',
       icon: 'pen',
       title: 'Ideas Need Structure',
       copy: 'A great story needs the right foundation. We shape ideas into powerful narratives and solid plans.',
       chips: ['Story Development', 'Screenplay Writing', 'Research & References', 'Pre-Production Planning'],
     },
     {
-      num: '03',
+      num: '3',
       icon: 'users',
       title: 'Stories Need People',
       copy: 'The right people bring your story to life. We build the perfect cast and crew for your vision.',
       chips: ['Casting', 'Crew Selection', 'Location Scouting', 'Production Design', 'Costume Planning'],
     },
     {
-      num: '04',
+      num: '4',
       icon: 'clapper',
       title: 'Lights. Camera. Action.',
       copy: 'Where preparation meets performance. Disciplined sets, creative freedom, and every frame with intent.',
       chips: ['Direction', 'Cinematography', 'Lighting', 'Art Direction', 'Sound Recording'],
     },
     {
-      num: '05',
+      num: '5',
       icon: 'monitor',
       title: 'Where Stories Come Alive',
       copy: 'The edit room is where rhythm, colour and sound turn footage into a cinematic experience.',
       chips: ['Editing', 'Color Grading', 'VFX', 'Sound Design', 'Music & Mix', 'DI & Mastering'],
     },
     {
-      num: '06',
+      num: '6',
       icon: 'megaphone',
       title: 'Every Story Deserves An Audience',
       copy: 'We take your film beyond completion — into festivals, platforms, theatres and the world.',
@@ -275,12 +280,6 @@ export const team = {
       role: 'Creative Head',
       quote: 'Every frame should have purpose.',
       note: 'Shapes the visual language of each project, from look-book to final grade.',
-    },
-    {
-      name: 'Srikkanth Govindaraajan',
-      role: 'Creative Head',
-      quote: 'Cinema is emotion crafted into visuals.',
-      note: 'Turns scripts into shot-lists and moments into memories.',
     },
   ],
 }

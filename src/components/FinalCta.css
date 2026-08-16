@@ -30,7 +30,11 @@
   font-size: 15.5px;
 }
 
-.cta__inner > div {
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
   margin-top: 34px;
 }
 

@@ -14,7 +14,7 @@
 }
 
 .nav--solid {
-  background: rgba(10, 10, 8, 0.9);
+  background: var(--nav-solid-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--line);
@@ -33,6 +33,11 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+}
+
+.logo__mark {
+  flex-shrink: 0;
+  border-radius: 6px;
 }
 
 .logo__text {
@@ -103,7 +108,14 @@
   transform: scaleX(1);
 }
 
-/* CTA */
+/* actions */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .nav__cta {
   flex-shrink: 0;
   font-family: var(--font-head);
@@ -122,12 +134,37 @@
 }
 
 .nav__cta:hover {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: var(--gold-solid);
+  border-color: var(--gold-solid);
   color: var(--gold-ink);
 }
 
-.nav__cta--mobile {
+.nav__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  transition:
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+
+.nav__icon-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.nav__icon-btn--whatsapp:hover {
+  border-color: #25d366;
+  color: #25d366;
+}
+
+.nav__panel-actions {
   display: none;
 }
 
@@ -138,8 +175,8 @@
 }
 
 /* mobile */
-@media (max-width: 1020px) {
-  .nav__cta {
+@media (max-width: 1100px) {
+  .nav__actions {
     display: none;
   }
 
@@ -153,7 +190,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-    background: rgba(10, 10, 8, 0.98);
+    background: var(--nav-panel-bg);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s var(--ease);
@@ -169,8 +206,22 @@
     padding: 12px 0;
   }
 
-  .nav__cta--mobile {
-    display: inline-flex;
-    margin-top: 20px;
+  .nav__panel-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 220px;
+    max-width: 80vw;
+    margin-top: 24px;
+  }
+
+  .nav__panel-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo__text {
+    display: none;
   }
 }

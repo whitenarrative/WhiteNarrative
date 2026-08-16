@@ -1,11 +1,29 @@
 import { Link } from 'react-router-dom'
-import { hero } from '../data/content.js'
+import { hero, site } from '../data/content.js'
 import Icon from './Icon.jsx'
 import './Hero.css'
 
+const heroVideoUrl = 'https://videos.pexels.com/video-files/3945446/3945446-hd_1366_720_50fps.mp4'
+
 export default function Hero() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
   return (
     <section id="home" className="hero" aria-label="Introduction">
+      <div className="hero__media" aria-hidden="true">
+        <video
+          className="hero__video"
+          autoPlay={!reduceMotion}
+          loop={!reduceMotion}
+          muted
+          playsInline
+          preload="auto"
+        >
+          <source src={heroVideoUrl} type="video/mp4" />
+        </video>
+        <div className="hero__scrim" />
+      </div>
+
       <div className="container hero__inner">
         <p className="hero__kicker reveal">{hero.kicker}</p>
 
@@ -35,10 +53,10 @@ export default function Hero() {
         </ul>
 
         <div className="hero__actions reveal" style={{ '--d': '0.48s' }}>
-          <Link to="/contact" className="btn btn--gold">
+          <a href={site.whatsappLink} target="_blank" rel="noreferrer" className="btn btn--gold">
+            <Icon name="whatsapp" size={16} />
             {hero.ctaPrimary}
-            <Icon name="arrowUpRight" size={15} strokeWidth={2} />
-          </Link>
+          </a>
           <Link to="/work" className="btn btn--ghost">
             <Icon name="play" size={16} />
             {hero.ctaSecondary}

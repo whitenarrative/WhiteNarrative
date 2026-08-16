@@ -30,6 +30,15 @@ export default function ContactPage() {
 
             <ul>
               <li>
+                <Icon name="whatsapp" size={17} strokeWidth={1.4} />
+                <div>
+                  <span>WhatsApp</span>
+                  <a href={site.whatsappLink} target="_blank" rel="noreferrer">
+                    {site.phone}
+                  </a>
+                </div>
+              </li>
+              <li>
                 <Icon name="mail" size={17} strokeWidth={1.4} />
                 <div>
                   <span>Email</span>

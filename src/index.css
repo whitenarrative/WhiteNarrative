@@ -8,10 +8,13 @@
   --line: rgba(255, 255, 255, 0.09);
   --line-strong: rgba(255, 255, 255, 0.18);
   --gold: #c9a05a;
+  --gold-solid: #c9a05a;
   --gold-ink: #14110a;
   --ink: #f2efe9;
   --muted: #96907f;
-  --faint: #625c4c;
+  --faint: #837c6c;
+  --nav-solid-bg: rgba(10, 10, 8, 0.9);
+  --nav-panel-bg: rgba(10, 10, 8, 0.98);
 
   --font-display: 'Anton', 'Oswald', sans-serif;
   --font-head: 'Oswald', sans-serif;
@@ -20,6 +23,19 @@
   --container: 1160px;
   --nav-h: 72px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme='light'] {
+  --bg: #faf8f4;
+  --surface: #f1ede4;
+  --line: rgba(20, 17, 10, 0.1);
+  --line-strong: rgba(20, 17, 10, 0.22);
+  --gold: #7a5720;
+  --ink: #1a170f;
+  --muted: #5c564a;
+  --faint: #736c5e;
+  --nav-solid-bg: rgba(250, 248, 244, 0.88);
+  --nav-panel-bg: rgba(250, 248, 244, 0.98);
 }
 
 * {
@@ -40,11 +56,14 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease);
 }
 
 ::selection {
   background: rgba(201, 160, 90, 0.3);
-  color: #fff;
+  color: var(--ink);
 }
 
 ::-webkit-scrollbar {
@@ -174,7 +193,7 @@ section {
 }
 
 .btn--gold {
-  background: var(--gold);
+  background: var(--gold-solid);
   color: var(--gold-ink);
 }
 

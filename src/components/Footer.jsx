@@ -36,6 +36,11 @@ export default function Footer() {
           <h4>Contact</h4>
           <ul>
             <li>
+              <a href={site.whatsappLink} target="_blank" rel="noreferrer">
+                <Icon name="whatsapp" size={14} /> WhatsApp Us
+              </a>
+            </li>
+            <li>
               <a href={`mailto:${site.email}`}>
                 <Icon name="mail" size={14} /> {site.email}
               </a>

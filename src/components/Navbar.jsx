@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { navLinks } from '../data/content.js'
+import { navLinks, site } from '../data/content.js'
+import useTheme from '../hooks/useTheme.js'
 import Icon from './Icon.jsx'
 import Logo from './Logo.jsx'
 import './Navbar.css'
@@ -10,6 +11,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [activeHash, setActiveHash] = useState('')
+  const [theme, toggleTheme] = useTheme()
 
   const isHome = location.pathname === '/'
 
@@ -45,6 +47,10 @@ export default function Navbar() {
     }
   }, [open])
 
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
+
   const isActive = (to) => {
     if (to === '/') return isHome && !activeHash
     if (to.startsWith('/#')) return isHome && activeHash === to.slice(1)
@@ -67,14 +73,49 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link to="/contact" className="btn btn--gold nav__cta--mobile" onClick={() => setOpen(false)}>
-            Contact Us
-          </Link>
+
+          <div className="nav__panel-actions">
+            <button className="btn btn--ghost" onClick={toggleTheme}>
+              <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={16} />
+              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            </button>
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn--ghost"
+              onClick={() => setOpen(false)}
+            >
+              <Icon name="whatsapp" size={16} />
+              WhatsApp Us
+            </a>
+            <Link to="/contact" className="btn btn--gold" onClick={() => setOpen(false)}>
+              Contact Us
+            </Link>
+          </div>
         </nav>
 
-        <Link to="/contact" className="nav__cta">
-          Contact Us
-        </Link>
+        <div className="nav__actions">
+          <button
+            className="nav__icon-btn nav__theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={17} strokeWidth={1.6} />
+          </button>
+          <a
+            href={site.whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            className="nav__icon-btn nav__icon-btn--whatsapp"
+            aria-label="Chat with us on WhatsApp"
+          >
+            <Icon name="whatsapp" size={18} strokeWidth={1.6} />
+          </a>
+          <Link to="/contact" className="nav__cta">
+            Contact Us
+          </Link>
+        </div>
 
         <button
           className="nav__burger"
