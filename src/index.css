@@ -3,6 +3,7 @@
 /* ---------------------------------- */
 
 :root {
+  color-scheme: dark;
   --bg: #0a0a08;
   --surface: #131210;
   --line: rgba(255, 255, 255, 0.09);
@@ -26,6 +27,7 @@
 }
 
 :root[data-theme='light'] {
+  color-scheme: light;
   --bg: #faf8f4;
   --surface: #f1ede4;
   --line: rgba(20, 17, 10, 0.1);

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { workCategories } from '../data/content.js'
 import WorkCard from './WorkCard.jsx'
+import WorkModal from './WorkModal.jsx'
 import './WorkGrid.css'
 
 /**
@@ -12,6 +13,7 @@ import './WorkGrid.css'
  */
 export default function WorkGrid({ items, filterable = false }) {
   const [active, setActive] = useState('All')
+  const [selected, setSelected] = useState(null)
   const categories = ['All', ...workCategories]
 
   return (
@@ -41,10 +43,12 @@ export default function WorkGrid({ items, filterable = false }) {
               display: active === 'All' || item.category === active ? undefined : 'none',
             }}
           >
-            <WorkCard item={item} />
+            <WorkCard item={item} onOpen={() => setSelected(item)} />
           </div>
         ))}
       </div>
+
+      <WorkModal item={selected} onClose={() => setSelected(null)} />
     </>
   )
 }

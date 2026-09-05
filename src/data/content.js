@@ -20,10 +20,10 @@ export const site = {
 export const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'The Challenge', to: '/#challenge' },
-  { label: 'Our Journey', to: '/#journey' },
   { label: 'What We Do', to: '/#services' },
-  { label: 'Our Work', to: '/work' },
+  { label: 'Our Journey', to: '/#journey' },
   { label: 'Meet The Team', to: '/#team' },
+  { label: 'Our Work', to: '/work' },
 ]
 
 export const hero = {
@@ -162,14 +162,8 @@ export const services = {
   ],
 }
 
-export const who = {
-  id: 'who',
-  eyebrow: 'Who We Are',
-  quote: "We don't just produce films. We build stories that deserve to be remembered.",
-  copy: 'White Narrative exists for filmmakers, dreamers, brands and storytellers looking for a partner who understands every stage of the filmmaking journey.',
-}
-
 export const why = {
+  id: 'why',
   eyebrow: 'Why White Narrative',
   title: ['A partner for the', 'whole journey.'],
   items: [
@@ -199,8 +193,6 @@ export const why = {
 export const stats = [
   { icon: 'reel', value: 50, suffix: '+', label: 'Projects Completed' },
   { icon: 'smile', value: 25, suffix: '+', label: 'Happy Clients' },
-  { icon: 'award', value: 20, suffix: '+', label: 'Festival Selections' },
-  { icon: 'globe', value: 5, suffix: '', label: 'Countries Reached' },
 ]
 
 export const workCategories = [
@@ -222,37 +214,44 @@ export const work = {
       title: 'Beyond The Silence',
       category: 'Feature Film',
       year: '2025',
-      note: 'A father-daughter drama shot across 40 days in coastal Karnataka — developed with us from a two-page idea.',
+      synopsis:
+        'A father-daughter drama shot across 40 days in coastal Karnataka — developed with us from a two-page idea.',
+      whatWeDid: 'Story development, full production and post-production, and festival strategy.',
     },
     {
       title: 'The Last Train',
       category: 'Short Film',
       year: '2025',
-      note: 'A single-location thriller crafted for the festival circuit — 20+ official selections and counting.',
+      synopsis: 'A single-location thriller crafted for the festival circuit — 20+ official selections and counting.',
+      whatWeDid: 'Concept development, production, edit and festival distribution support.',
     },
     {
       title: 'Fault Lines',
       category: 'Web Series',
       year: '2024',
-      note: 'Six-episode ensemble drama — casting, production and post handled end-to-end by our team.',
+      synopsis: 'Six-episode ensemble drama — casting, production and post handled end-to-end by our team.',
+      whatWeDid: 'Casting, production and post-production across all six episodes.',
     },
     {
       title: 'Inspire',
       category: 'Corporate Film',
       year: '2024',
-      note: 'A founder-story brand film that turned an internal milestone into a public moment.',
+      synopsis: 'A founder-story brand film that turned an internal milestone into a public moment.',
+      whatWeDid: 'Script, direction, production and final edit.',
     },
     {
       title: 'Ignite',
       category: 'Ad Film',
       year: '2024',
-      note: 'A 40-second launch campaign, from script to broadcast master in three weeks.',
+      synopsis: 'A 40-second launch campaign, from script to broadcast master in three weeks.',
+      whatWeDid: 'Concept, production and broadcast-ready delivery.',
     },
     {
       title: 'Chase The Light',
       category: 'Music Video',
       year: '2023',
-      note: 'A one-night neon chase through the city — planned to the minute, shot before sunrise.',
+      synopsis: 'A one-night neon chase through the city — planned to the minute, shot before sunrise.',
+      whatWeDid: 'Concept, direction, production and colour grade.',
     },
   ],
 }
@@ -284,34 +283,10 @@ export const team = {
   ],
 }
 
-export const testimonials = {
-  id: 'testimonials',
-  eyebrow: 'Testimonials & Partners',
-  title: ['Trusted by storytellers', 'and brands alike.'],
-  items: [
-    {
-      quote: 'White Narrative understood our vision better than we did. They turned our idea into a film we are incredibly proud of.',
-      name: 'Rohit Mehra',
-      role: 'Director',
-    },
-    {
-      quote: 'They treated our brand film like cinema — every rough cut came with reasoning, and the final film moved our own team to tears.',
-      name: 'Ananya Iyer',
-      role: 'Brand Marketing Lead',
-    },
-    {
-      quote: 'From storyboard to release night, the process was calm and completely transparent. My music video looks bigger than its budget.',
-      name: 'Karthik Rao',
-      role: 'Independent Musician',
-    },
-  ],
-  partners: ['Google', 'TATA', 'Swiggy', 'Sony Music', 'OLA'],
-}
-
 export const finalCta = {
   titleLines: ['Your story already exists.', "Let's frame it forever."],
   copy: "Tell us what you're dreaming of — a film, a series, a campaign — and we'll help you take the first step.",
-  button: 'Get In Touch',
+  button: 'Contact Us',
 }
 
 export const workPage = {
@@ -322,8 +297,7 @@ export const workPage = {
 
 export const contactPage = {
   eyebrow: 'Contact',
-  title: ['Tell us about', 'your project.'],
-  sub: "Share a few details and we'll get back to you within 1–2 business days.",
-  projectTypes: ['Feature Film', 'Short Film', 'Web Series', 'Corporate Film', 'Ad Film', 'Music Video', 'Other'],
+  title: ['Let’s talk about', 'your project.'],
+  sub: 'Reach out directly — WhatsApp is the fastest way to hear back from us.',
   detailsTitle: 'Reach Us Directly',
 }

@@ -20,11 +20,12 @@ npm run preview  # serve the production bundle
 
 ## Pages
 
-- **`/`** — Home: Hero → The Challenge → The Journey (01–06) → What We Do → Who We Are
-  / Why White Narrative → Stats → Work preview (3 projects) → Meet the Team →
-  Testimonials & Partners → closing CTA.
-- **`/work`** — Gallery: every project, filterable by format.
-- **`/contact`** — Contact form plus direct details (email/phone/location/socials).
+- **`/`** — Home: Hero → The Challenge → What We Do → Our Journey → Meet the Team →
+  Work preview (3 projects) → Why White Narrative → Stats → closing CTA.
+- **`/work`** — Gallery: every project, filterable by format. Clicking a card opens
+  a detail popup (`WorkModal.jsx`) with synopsis, year of release and what we did.
+- **`/contact`** — Direct details only (WhatsApp/email/phone/location/socials) —
+  there's no on-page form.
 
 `vercel.json` rewrites all paths to `index.html` so direct links to `/work` or
 `/contact` work on Vercel (client-side routing needs this — without it, a refresh
@@ -46,13 +47,6 @@ src/
 point at an in-page section (`/#challenge`, `/#journey`, etc.) only exist on Home;
 from any other page they navigate back to `/` and then scroll.
 
-## Contact form
-
-There's no backend, so submitting the form builds a `mailto:` link (subject +
-body pre-filled from the fields) and opens the visitor's email client. If you
-later want real form submissions (e.g. via a hosted form service or a small API
-route), that's the one place to swap out — `src/components/ContactForm.jsx`.
-
 ## Theming
 
 `data-theme` on `<html>` switches the palette — `src/index.css` defines the dark
@@ -69,12 +63,15 @@ the button-fill pair and need to stay readable regardless of page theme.
   (`Hero.jsx`, `heroVideoUrl`), used as a stand-in until real studio reel footage
   is available. Free under the [Pexels License](https://www.pexels.com/license/),
   no attribution required, but swap it for actual reel/BTS footage before launch.
-- **Stats** (50+ / 25+ / 20+ / 5) — from the design mockups; confirm real numbers.
-- **Our Work** case-study notes and years — sample copy written to be replaced.
-- **Testimonials** — the Rohit Mehra quote is from the mockups; the other two are
-  sample placeholders.
-- **Partner names** and social links — update `src/data/content.js`.
-- **Team portraits** — currently monogram avatars; swap in photos by editing
-  `Team.jsx` when assets are available.
+- **Email address** — `site.email` in `src/data/content.js`.
+- **Social links** — `site.socials` in `src/data/content.js`; each entry needs its
+  real profile URL.
+- **Stats** (50+ / 25+) — from the design mockups; confirm real numbers.
+- **Our Work** — each item's `synopsis` is sample copy; `whatWeDid` is a generic
+  placeholder per category (`src/data/content.js`) — replace both with the real
+  per-project credits.
+- **Team portraits and bios** — currently monogram avatars with placeholder
+  quotes/notes; swap in real photos and copy by editing `Team.jsx` and the `team`
+  export in `src/data/content.js`.
 
 Fonts load from Google Fonts (see `index.html`).
