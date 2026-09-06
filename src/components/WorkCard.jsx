@@ -15,11 +15,9 @@ export default function WorkCard({ item, onOpen }) {
       }}
     >
       <div className="work-card__panel">
-        <span className="work-card__initial display" aria-hidden="true">
-          {item.title[0]}
-        </span>
+        <img className="work-card__image" src={item.posterUrl} alt="" />
         <span className="work-card__category">{item.category}</span>
-        <span className="work-card__year">{item.year}</span>
+        <span className="work-card__play">Watch</span>
       </div>
       <h3>{item.title}</h3>
       <p>{item.synopsis}</p>

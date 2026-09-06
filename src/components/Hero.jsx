@@ -3,7 +3,7 @@ import { hero, site } from '../data/content.js'
 import Icon from './Icon.jsx'
 import './Hero.css'
 
-const heroVideoUrl = 'https://videos.pexels.com/video-files/3945446/3945446-hd_1366_720_50fps.mp4'
+const heroVideoUrl = '/hero-reel.mp4'
 
 export default function Hero() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches

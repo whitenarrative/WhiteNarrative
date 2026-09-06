@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { workCategories } from '../data/content.js'
+import { useCallback, useState } from 'react'
 import WorkCard from './WorkCard.jsx'
 import WorkModal from './WorkModal.jsx'
 import './WorkGrid.css'
@@ -14,7 +13,8 @@ import './WorkGrid.css'
 export default function WorkGrid({ items, filterable = false }) {
   const [active, setActive] = useState('All')
   const [selected, setSelected] = useState(null)
-  const categories = ['All', ...workCategories]
+  const categories = ['All', ...new Set(items.map((item) => item.category))]
+  const closeModal = useCallback(() => setSelected(null), [])
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function WorkGrid({ items, filterable = false }) {
         ))}
       </div>
 
-      <WorkModal item={selected} onClose={() => setSelected(null)} />
+      <WorkModal item={selected} onClose={closeModal} />
     </>
   )
 }

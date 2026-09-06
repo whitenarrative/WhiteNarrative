@@ -5,7 +5,7 @@ import './Services.css'
 
 export default function Services() {
   return (
-    <section id={services.id} className="services" aria-label="What we do">
+    <section id={services.id} className="services" aria-label="Services">
       <div className="container">
         <div className="section-head reveal">
           <p className="eyebrow">{services.eyebrow}</p>
