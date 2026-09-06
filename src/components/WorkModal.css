@@ -129,6 +129,16 @@
   transform: translate(-50%, -50%);
 }
 
+.work-modal__poster--coming-soon {
+  aspect-ratio: 2 / 3;
+  max-width: 340px;
+  margin-inline: auto;
+}
+
+.work-modal__poster--coming-soon img {
+  opacity: 1;
+}
+
 .work-modal__watch {
   display: inline-flex;
   align-items: center;

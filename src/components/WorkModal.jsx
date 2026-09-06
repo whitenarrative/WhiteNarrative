@@ -48,22 +48,31 @@ export default function WorkModal({ item, onClose }) {
           <h2 id="work-modal-title" className="display work-modal__title">{item.title}</h2>
         </div>
 
-        <a
-          className="work-modal__poster"
-          href={item.watchUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Watch ${item.title}`}
-        >
-          <img src={item.posterUrl} alt={`${item.title} poster`} />
-          <span className="work-modal__poster-play"><Icon name="play" size={28} /></span>
-          <span>Click poster to watch</span>
-        </a>
+        {item.watchUrl ? (
+          <>
+            <a
+              className="work-modal__poster"
+              href={item.watchUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Watch ${item.title}`}
+            >
+              <img src={item.posterUrl} alt={`${item.title} poster`} />
+              <span className="work-modal__poster-play"><Icon name="play" size={28} /></span>
+              <span>Click poster to watch</span>
+            </a>
 
-        <a className="work-modal__watch" href={item.watchUrl} target="_blank" rel="noreferrer">
-          Click here to watch
-          <Icon name="arrowUpRight" size={15} strokeWidth={2} />
-        </a>
+            <a className="work-modal__watch" href={item.watchUrl} target="_blank" rel="noreferrer">
+              Click here to watch
+              <Icon name="arrowUpRight" size={15} strokeWidth={2} />
+            </a>
+          </>
+        ) : (
+          <div className="work-modal__poster work-modal__poster--coming-soon">
+            <img src={item.posterUrl} alt={`${item.title} poster`} />
+            <span>Trailer coming soon</span>
+          </div>
+        )}
 
         <div className="work-modal__block">
           <h3>Synopsis</h3>

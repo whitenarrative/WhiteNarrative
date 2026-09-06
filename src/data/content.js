@@ -169,12 +169,8 @@ export const stats = [
 ]
 
 export const workCategories = [
-  'Feature Film',
-  'Short Film',
-  'Web Series',
-  'Corporate Film',
-  'Ad Film',
-  'Music Video',
+  'Upcoming',
+  'Released',
 ]
 
 export const work = {
@@ -184,17 +180,33 @@ export const work = {
   sub: 'A glimpse of the journeys we have framed — every project a different challenge, every frame earned.',
   items: [
     {
+      title: 'Until We Meet Again',
+      category: 'Upcoming',
+      year: 'Upcoming',
+      synopsis: 'A forthcoming romance about bonds that endure beyond time.',
+      posterUrl: '/work/until-we-meet-again.png',
+      credits: {
+        director: 'Arunachalam',
+        cinematographer: 'Bhuvanesh Thasma',
+        editor: 'Abinav Srinivas',
+        colorist: 'Abinav Srinivas (DI)',
+        musicDirector: 'Sarovar R',
+      },
+      cast: ['Arunachalam', 'Megha Kammaje'],
+      missingInfo: 'A trailer, release date, and public external listings have not been announced yet.',
+    },
+    {
       title: 'Hoovadagitthi',
-      category: 'Music Video',
+      category: 'Released',
       year: '2026',
       synopsis: 'A quirky Kannada rom-com about Kotresha, whose job hunt and bus ride turn into a daydream-fuelled crush on a florist.',
       posterUrl: 'https://i.ytimg.com/vi/wCSafswwyg8/maxresdefault.jpg',
       watchUrl: 'https://youtu.be/wCSafswwyg8?si=uOezrXH1pgzp_HxM',
       credits: {
         director: 'Not publicly credited',
-        cinematographer: 'Shivraj Rathod',
-        editor: 'Shivraj Rathod',
-        colorist: 'Shivraj Rathod',
+        cinematographer: 'Shivaraj Rathod',
+        editor: 'Shivaraj Rathod',
+        colorist: 'Shivaraj Rathod',
         musicDirector: 'South End Circle',
       },
       cast: ['Deekshith N C', 'Anoushka Gupta', 'Rajalakshmi', 'Sachin'],
@@ -202,14 +214,14 @@ export const work = {
     },
     {
       title: 'Byaate',
-      category: 'Short Film',
+      category: 'Released',
       year: '2025',
       synopsis: 'A Kannada short film about the difficult phase of life and the drive to pursue aspirations despite hardship.',
       posterUrl: 'https://i.ytimg.com/vi/ForT3MmS5hw/maxresdefault.jpg',
       watchUrl: 'https://www.youtube.com/watch?v=ForT3MmS5hw&t=4s',
       credits: {
         director: 'Sri Raghu',
-        cinematographer: 'Shivraj Rathod',
+        cinematographer: 'Shivaraj Rathod',
         editor: 'Not publicly credited',
         colorist: 'Not publicly credited',
         musicDirector: 'Prince Joseph',
@@ -219,16 +231,16 @@ export const work = {
     },
     {
       title: 'Agalike',
-      category: 'Music Video',
+      category: 'Released',
       year: '2025',
       synopsis: 'A Kannada song about two people drifting apart, and the memories and quiet ache that remain after separation.',
       posterUrl: 'https://i.ytimg.com/vi/q6bxCikcg_Q/maxresdefault.jpg',
       watchUrl: 'https://youtu.be/q6bxCikcg_Q?si=Qkqz74mymd_fg3l2',
       credits: {
         director: 'Arha Studios (video production)',
-        cinematographer: 'Shivraj Rathod',
-        editor: 'Shivraj Rathod',
-        colorist: 'Shivraj Rathod',
+        cinematographer: 'Shivaraj Rathod',
+        editor: 'Shivaraj Rathod',
+        colorist: 'Shivaraj Rathod',
         musicDirector: 'South End Circle',
       },
       cast: ['Deekshith N C', 'Anoushka Gupta'],
@@ -236,16 +248,16 @@ export const work = {
     },
     {
       title: 'Jackfruit',
-      category: 'Feature Film',
+      category: 'Released',
       year: 'Not announced',
       synopsis: 'Official teaser for an action thriller written, directed and produced by Yash.',
       posterUrl: 'https://i.ytimg.com/vi/AG34xy5vbS0/maxresdefault.jpg',
       watchUrl: 'https://youtu.be/AG34xy5vbS0?si=koSuOqjE7b4OvnsT',
       credits: {
         director: 'Yash',
-        cinematographer: 'Shivraj Rathod',
-        editor: 'Shivraj Rathod',
-        colorist: 'Shivraj Rathod',
+        cinematographer: 'Shivaraj Rathod',
+        editor: 'Shivaraj Rathod',
+        colorist: 'Shivaraj Rathod',
         musicDirector: 'Prince Joseph',
       },
       cast: ['Sri Raghu', 'Rakesh', 'Prajwal', 'Adarsh Raj', 'Sanjay Ram', 'Deepak', 'Harshith', 'Sagar Gumballi', 'Venkatesh', 'Akash'],
@@ -253,7 +265,7 @@ export const work = {
     },
     {
       title: 'A Day in the Life of a Dispatcher in India',
-      category: 'Corporate Film',
+      category: 'Released',
       year: '2022',
       synopsis: 'A profile of Zubair, a Hyderabad-based dispatcher who coordinates jobs and parts for field computer engineers.',
       posterUrl: 'https://i.ytimg.com/vi/6yGUiqkzQBo/maxresdefault.jpg',
@@ -270,7 +282,7 @@ export const work = {
     },
     {
       title: 'Mind Reader',
-      category: 'Short Film',
+      category: 'Released',
       year: '2026',
       synopsis: 'A crime investigation involving a suspect and a police officer that gradually uncovers who committed the crime.',
       posterUrl: 'https://i.ytimg.com/vi/JFeSmgEwoK4/maxresdefault.jpg',
@@ -279,7 +291,7 @@ export const work = {
         director: 'Vijay Mohan',
         cinematographer: 'Richard Danial',
         editor: 'Richard Danial',
-        colorist: 'Shivraj Rathod',
+        colorist: 'Shivaraj Rathod',
         musicDirector: 'Chandan Heggade, Arjun Heggade',
       },
       cast: ['Yashwanth Shetty', 'Dhanu Harsha', 'Shashank'],
@@ -309,7 +321,7 @@ export const team = {
       image: '/team/abinav-srinivas.png',
     },
     {
-      name: 'Shivraj Rathod',
+      name: 'Shivaraj Rathod',
       role: 'Creative Head',
       quote: 'Every frame should have purpose.',
       note: 'Shapes the visual language of each project, from look-book to final grade.',

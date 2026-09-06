@@ -19,7 +19,6 @@ export default function Team() {
               <div className="team__portrait" aria-label={`Portrait of ${m.name}`}>
                 <img src={m.image} alt={m.name} />
               </div>
-              <p className="team__number" aria-hidden="true">0{i + 1}</p>
               <h3>{m.name}</h3>
               <p className="team__role">{m.role}</p>
             </article>

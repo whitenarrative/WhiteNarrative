@@ -57,20 +57,8 @@
   transform: scale(1.045);
 }
 
-.team__number {
-  width: max-content;
-  margin: 24px auto 0;
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--line-strong);
-  font-family: var(--font-head);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  color: var(--gold);
-}
-
 .team__card h3 {
-  margin-top: 16px;
+  margin-top: 22px;
   font-family: var(--font-head);
   font-size: clamp(18px, 2vw, 23px);
   font-weight: 600;

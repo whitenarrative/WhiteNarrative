@@ -25,9 +25,11 @@ export default function Services() {
               className="services__card reveal"
               style={{ '--d': `${(i % 3) * 0.05}s` }}
             >
-              <Icon name={item.icon} size={22} strokeWidth={1.4} />
-              <h3>{item.title}</h3>
-              <p>{item.copy}</p>
+              <div className="services__card-inner">
+                <Icon name={item.icon} size={22} strokeWidth={1.4} />
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </div>
             </Link>
           ))}
         </div>

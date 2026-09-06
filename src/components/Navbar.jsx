@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { navLinks, site } from '../data/content.js'
 import useTheme from '../hooks/useTheme.js'
@@ -12,6 +12,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [activeHash, setActiveHash] = useState('')
   const [theme, toggleTheme] = useTheme()
+  const menuRef = useRef(null)
+  const burgerRef = useRef(null)
 
   const isHome = location.pathname === '/'
 
@@ -41,9 +43,19 @@ export default function Navbar() {
   }, [isHome])
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    if (!open) return undefined
+
+    document.body.classList.add('nav-menu-open')
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    requestAnimationFrame(() => menuRef.current?.querySelector('a, button')?.focus())
+
     return () => {
-      document.body.style.overflow = ''
+      document.body.classList.remove('nav-menu-open')
+      document.removeEventListener('keydown', onKeyDown)
+      burgerRef.current?.focus()
     }
   }, [open])
 
@@ -58,11 +70,20 @@ export default function Navbar() {
   }
 
   return (
-    <header className={`nav ${scrolled || open ? 'nav--solid' : ''}`}>
+    <header
+      className={`nav ${isHome && !scrolled && !open ? 'nav--hero' : ''} ${scrolled ? 'nav--solid' : ''} ${open ? 'nav--menu-open' : ''}`}
+    >
       <div className="container nav__inner">
-        <Logo />
+        <Logo onClick={() => setOpen(false)} />
 
-        <nav className={`nav__links ${open ? 'nav__links--open' : ''}`} aria-label="Primary">
+        {open && <button type="button" className="nav__backdrop" aria-label="Close menu" onClick={() => setOpen(false)} />}
+
+        <nav
+          ref={menuRef}
+          id="primary-menu"
+          className={`nav__links ${open ? 'nav__links--open' : ''}`}
+          aria-label="Primary"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.to}
@@ -75,7 +96,14 @@ export default function Navbar() {
           ))}
 
           <div className="nav__panel-actions">
-            <button className="btn btn--ghost" onClick={toggleTheme}>
+            <button
+              type="button"
+              className="btn btn--ghost"
+              onClick={() => {
+                toggleTheme()
+                setOpen(false)
+              }}
+            >
               <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={16} />
               {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
             </button>
@@ -118,10 +146,13 @@ export default function Navbar() {
         </div>
 
         <button
+          ref={burgerRef}
+          type="button"
           className="nav__burger"
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((wasOpen) => !wasOpen)}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
+          aria-controls="primary-menu"
         >
           <Icon name={open ? 'close' : 'menu'} size={24} strokeWidth={1.6} />
         </button>
