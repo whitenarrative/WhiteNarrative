@@ -14,7 +14,7 @@ export default function WorkCard({ item, onOpen }) {
         }
       }}
     >
-      <div className={`work-card__panel ${item.category === 'Upcoming' ? 'work-card__panel--poster' : ''}`}>
+      <div className={`work-card__panel ${item.posterLayout === 'portrait' ? 'work-card__panel--poster' : ''}`}>
         <img className="work-card__image" src={item.posterUrl} alt="" />
         <span className="work-card__category">{item.category}</span>
         <span className="work-card__play">Watch</span>

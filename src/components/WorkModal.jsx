@@ -68,7 +68,7 @@ export default function WorkModal({ item, onClose }) {
             </a>
           </>
         ) : (
-          <div className="work-modal__poster work-modal__poster--coming-soon">
+          <div className={`work-modal__poster work-modal__poster--coming-soon ${item.posterLayout === 'portrait' ? 'work-modal__poster--portrait' : ''}`}>
             <img src={item.posterUrl} alt={`${item.title} poster`} />
             <span>Trailer coming soon</span>
           </div>
