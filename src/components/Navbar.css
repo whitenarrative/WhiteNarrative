@@ -344,6 +344,7 @@ body.nav-menu-open {
     color: #fff;
   }
 
+  /* Light mode: only the scrolled pill/solid bar gets dark treatment */
   :root[data-theme='light'] .nav--home .nav__inner {
     border-color: rgba(38, 32, 20, 0.2);
     background:
@@ -357,10 +358,15 @@ body.nav-menu-open {
     box-shadow: 0 6px 22px rgba(42, 32, 15, 0.1);
   }
 
+  /* Nav links over the hero video stay white in light mode */
   :root[data-theme='light'] .nav--home.nav--hero .nav__link,
-  :root[data-theme='light'] .nav--home.nav--solid .nav__link,
   :root[data-theme='light'] .nav--home.nav--hero .nav__link:hover,
-  :root[data-theme='light'] .nav--home.nav--hero .nav__link--active,
+  :root[data-theme='light'] .nav--home.nav--hero .nav__link--active {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Nav links in the solid/scrolled bar get dark treatment in light mode */
+  :root[data-theme='light'] .nav--home.nav--solid .nav__link,
   :root[data-theme='light'] .nav--home.nav--solid .nav__link:hover,
   :root[data-theme='light'] .nav--home.nav--solid .nav__link--active {
     color: #2a2418;
@@ -376,21 +382,34 @@ body.nav-menu-open {
     border-color: rgba(38, 32, 20, 0.28);
   }
 
-  :root[data-theme='light'] .nav--home .nav__inner > .logo .logo__mark,
-  :root[data-theme='light'] .nav--home .nav__hero-logo .logo__mark {
+  /* Scrolled pill logo: invert mark, darken name/tag */
+  :root[data-theme='light'] .nav--home .nav__inner > .logo .logo__mark {
     filter: invert(1);
   }
 
-  :root[data-theme='light'] .nav--home .nav__inner > .logo .logo__name,
-  :root[data-theme='light'] .nav--home .nav__hero-logo .logo__name {
+  :root[data-theme='light'] .nav--home .nav__inner > .logo .logo__name {
     color: #211c12;
     text-shadow: 0 1px 4px rgba(255, 255, 255, 0.7);
   }
 
-  :root[data-theme='light'] .nav--home .nav__inner > .logo .logo__tag,
-  :root[data-theme='light'] .nav--home .nav__hero-logo .logo__tag {
+  :root[data-theme='light'] .nav--home .nav__inner > .logo .logo__tag {
     color: #7a5720;
     text-shadow: 0 1px 4px rgba(255, 255, 255, 0.7);
+  }
+
+  /* Hero overlay logo always stays white — video is always dark */
+  :root[data-theme='light'] .nav--home .nav__hero-logo .logo__mark {
+    filter: none;
+  }
+
+  :root[data-theme='light'] .nav--home .nav__hero-logo .logo__name {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  :root[data-theme='light'] .nav--home .nav__hero-logo .logo__tag {
+    color: #e5c175;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   }
 }
 

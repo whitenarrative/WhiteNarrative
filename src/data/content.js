@@ -135,6 +135,11 @@ export const services = {
       title: '3D Animation',
       copy: 'Bringing depth, movement and dimension to stories that live beyond the lens.',
     },
+    {
+      icon: 'billboard',
+      title: 'Publicity Design',
+      copy: 'Eye-catching visuals and campaign material that put your project in front of the right audience.',
+    },
   ],
 }
 
@@ -253,7 +258,7 @@ export const work = {
       title: 'Jackfruit',
       category: 'Released',
       year: 'Not announced',
-      synopsis: 'Official teaser for an action thriller written, directed and produced by Yash.',
+      synopsis: 'An action thriller written, directed and produced by Yash.',
       posterUrl: 'https://i.ytimg.com/vi/zmtpM_vhmjM/maxresdefault.jpg',
       watchUrl: 'https://www.youtube.com/watch?v=zmtpM_vhmjM',
       credits: {
