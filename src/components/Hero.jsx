@@ -1,6 +1,7 @@
 import './Hero.css'
 
-const heroVideoUrl = '/hero-reel.mp4'
+const heroDesktopVideoUrl = '/hero-reel-desktop.mp4'
+const heroMobileVideoUrl = '/hero-reel-mobile.mp4'
 
 export default function Hero() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -16,7 +17,8 @@ export default function Hero() {
           playsInline
           preload="auto"
         >
-          <source src={heroVideoUrl} type="video/mp4" />
+          <source media="(max-width: 640px)" src={heroMobileVideoUrl} type="video/mp4" />
+          <source src={heroDesktopVideoUrl} type="video/mp4" />
         </video>
       </div>
     </section>
