@@ -1,4 +1,5 @@
 import { team } from '../data/content.js'
+import Icon from './Icon.jsx'
 import './Team.css'
 
 export default function Team() {
@@ -21,6 +22,22 @@ export default function Team() {
               </div>
               <h3>{m.name}</h3>
               <p className="team__role">{m.role}</p>
+              {m.socials?.length > 0 && (
+                <div className="team__socials">
+                  {m.socials.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${m.name} on ${s.label}`}
+                      className="team__social-link"
+                    >
+                      <Icon name={s.icon} size={17} strokeWidth={1.6} />
+                    </a>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
         </div>

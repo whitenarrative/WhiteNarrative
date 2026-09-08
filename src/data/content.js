@@ -45,7 +45,7 @@ export const challenge = {
     {
       icon: 'puzzle',
       title: 'Too Many Moving Parts',
-      copy: 'Actors, crew, locations, equipment and schedules — coordination alone can become overwhelming.',
+      copy: 'Actors, crew, locations, equipment and schedules, coordination alone can become overwhelming.',
     },
     {
       icon: 'rupee',
@@ -60,7 +60,7 @@ export const challenge = {
     {
       icon: 'bulb',
       title: 'Creative Direction',
-      copy: 'Finding the right story voice — and keeping the vision consistent through production.',
+      copy: 'Finding the right story voice and keeping the vision consistent through production.',
     },
     {
       icon: 'megaphone',
@@ -78,11 +78,6 @@ export const services = {
   sub: 'From the first idea to the final master, our crew brings every part of the production under one roof.',
   items: [
     {
-      icon: 'clapper',
-      title: 'Production',
-      copy: 'The people, planning and on-set precision that bring the whole vision together.',
-    },
-    {
       icon: 'pen',
       title: 'Scripting',
       copy: 'Clear, compelling scripts shaped around your story, audience and format.',
@@ -93,6 +88,11 @@ export const services = {
       copy: 'Cinematic narratives with the structure, rhythm and emotional pull to stay with viewers.',
     },
     {
+      icon: 'clapper',
+      title: 'Production',
+      copy: 'The people, planning and on-set precision that bring the whole vision together.',
+    },
+    {
       icon: 'compass',
       title: 'Direction',
       copy: 'A focused creative vision that guides every performance, frame and choice.',
@@ -100,7 +100,7 @@ export const services = {
     {
       icon: 'camera',
       title: 'Cinematography',
-      copy: 'Images with intent—built through composition, movement and light.',
+      copy: 'Images with intent, built through composition, movement and light.',
     },
     {
       icon: 'cut',
@@ -113,9 +113,9 @@ export const services = {
       copy: 'A refined visual world that gives every frame its final mood and texture.',
     },
     {
-      icon: 'music',
-      title: 'Music',
-      copy: 'Original scores and music direction that deepen the emotional experience.',
+      icon: 'mic',
+      title: 'Dubbing',
+      copy: 'Natural, precise voice work prepared for the audiences you want to reach.',
     },
     {
       icon: 'wave',
@@ -123,14 +123,14 @@ export const services = {
       copy: 'Layered sound design that makes the world on screen feel fully alive.',
     },
     {
-      icon: 'mic',
-      title: 'Dubbing',
-      copy: 'Natural, precise voice work prepared for the audiences you want to reach.',
+      icon: 'music',
+      title: 'Mix & Mastering',
+      copy: 'Fine tuning the audio and ensuring a balance between the music and sound effects while ensuring dialogues are audible.',
     },
     {
       icon: 'wand',
-      title: 'VFX',
-      copy: 'Invisible polish and striking visual moments, delivered with purpose.',
+      title: '3D Animation',
+      copy: 'Bringing depth, movement and dimension to stories that live beyond the lens.',
     },
   ],
 }
@@ -177,7 +177,7 @@ export const work = {
   id: 'work',
   eyebrow: 'Our Work',
   title: ['Stories that speak', 'for themselves.'],
-  sub: 'A glimpse of the journeys we have framed — every project a different challenge, every frame earned.',
+  sub: 'A glimpse of the journeys we have framed.',
   items: [
     {
       title: 'Until We Meet Again',
@@ -297,6 +297,45 @@ export const work = {
       cast: ['Yashwanth Shetty', 'Dhanu Harsha', 'Shashank'],
       missingInfo: 'Public IMDb and booking links were not found.',
     },
+    {
+      title: 'Onty Bunty Love Story',
+      category: 'Released',
+      type: 'Feature Film',
+      year: '2024',
+      synopsis: 'Onty is desperately in need of a girlfriend. To fulfill his wish he takes help from his best friend Bunty but finds shocking twists and turns which might put their friendship in danger.',
+      posterUrl: '/work/onty-bunty-love-story.jpg',
+      credits: {
+        director: 'Yatish Pannasamudra',
+        cinematographer: 'Hrithik Roshan Shivraj Rathod',
+        editor: 'Abinav Srinivas',
+        colorist: 'Shivraj Rathod',
+        musicDirector: 'Shrihari Shresty',
+      },
+      cast: ['Yatish Pannasamudra', 'Vaibhav Vardhan', 'Shweta S Bhat', 'Shrusthi Chandrashekar', 'Ragavendra Henri'],
+      links: [
+        { label: 'IMDb', href: 'https://www.imdb.com/title/tt30587816/' },
+      ],
+    },
+    {
+      title: 'PISHAACHI',
+      category: 'Released',
+      type: 'Music Video',
+      year: null,
+      synopsis: "Music Video based on lyrics by Shri. Da Ra Bendre's Kurudu Kanchana reimagined by C Joyson Rony.",
+      posterUrl: 'https://i.ytimg.com/vi/2LBzLLle5QE/maxresdefault.jpg',
+      watchUrl: 'https://youtu.be/2LBzLLle5QE',
+      credits: {
+        director: 'C Joyson Rony',
+        cinematographer: 'Charan',
+        editor: 'Abinav Srinivas',
+        colorist: 'Abinav Srinivas',
+        musicDirector: 'C Joyson Rony',
+      },
+      cast: ['C Joyson Rony', 'Joyson Rony', 'Neha Goyal', 'Vinod Kumar Thangavelu', 'Divarshana Saxena', 'Bhavani Gopi'],
+      links: [
+        { label: 'Watch on YouTube', href: 'https://youtu.be/2LBzLLle5QE' },
+      ],
+    },
   ],
 }
 
@@ -312,6 +351,7 @@ export const team = {
       quote: 'Building meaningful stories that reach audiences.',
       note: 'Makes sure every finished film finds the people it was made for.',
       image: '/team/alathur-srinivas.png',
+      socials: [],
     },
     {
       name: 'Abinav Srinivas',
@@ -319,6 +359,10 @@ export const team = {
       quote: 'The story always comes first.',
       note: "Leads every production with a writer's instinct and a producer's discipline.",
       image: '/team/abinav-srinivas.png',
+      socials: [
+        { icon: 'instagram', href: 'https://www.instagram.com/abinavsrinivas_517/', label: 'Instagram' },
+        { icon: 'linkedin', href: 'https://www.linkedin.com/in/abinav-srinivas/', label: 'LinkedIn' },
+      ],
     },
     {
       name: 'Shivaraj Rathod',
@@ -326,6 +370,10 @@ export const team = {
       quote: 'Every frame should have purpose.',
       note: 'Shapes the visual language of each project, from look-book to final grade.',
       image: '/team/shivraj-rathod.png',
+      socials: [
+        { icon: 'instagram', href: 'https://www.instagram.com/practical_theory', label: 'Instagram' },
+        { icon: 'linkedin', href: 'https://www.linkedin.com/in/shivaraj-rathod', label: 'LinkedIn' },
+      ],
     },
   ],
 }

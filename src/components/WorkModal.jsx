@@ -44,34 +44,38 @@ export default function WorkModal({ item, onClose }) {
         </button>
 
         <div className="work-modal__intro">
-          <span className="work-modal__category">{item.category}</span>
+          <span className="work-modal__category">
+            {item.type ? `${item.type} · ${item.category}` : item.category}
+          </span>
           <h2 id="work-modal-title" className="display work-modal__title">{item.title}</h2>
         </div>
 
-        {item.watchUrl ? (
-          <>
-            <a
-              className="work-modal__poster"
-              href={item.watchUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Watch ${item.title}`}
-            >
-              <img src={item.posterUrl} alt={`${item.title} poster`} />
-              <span className="work-modal__poster-play"><Icon name="play" size={28} /></span>
-              <span>Click poster to watch</span>
-            </a>
+        {item.posterUrl && (
+          item.watchUrl ? (
+            <>
+              <a
+                className="work-modal__poster"
+                href={item.watchUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Watch ${item.title}`}
+              >
+                <img src={item.posterUrl} alt={`${item.title} poster`} />
+                <span className="work-modal__poster-play"><Icon name="play" size={28} /></span>
+                <span>Click poster to watch</span>
+              </a>
 
-            <a className="work-modal__watch" href={item.watchUrl} target="_blank" rel="noreferrer">
-              Click here to watch
-              <Icon name="arrowUpRight" size={15} strokeWidth={2} />
-            </a>
-          </>
-        ) : (
-          <div className={`work-modal__poster work-modal__poster--coming-soon ${item.posterLayout === 'portrait' ? 'work-modal__poster--portrait' : ''}`}>
-            <img src={item.posterUrl} alt={`${item.title} poster`} />
-            <span>Trailer coming soon</span>
-          </div>
+              <a className="work-modal__watch" href={item.watchUrl} target="_blank" rel="noreferrer">
+                Click here to watch
+                <Icon name="arrowUpRight" size={15} strokeWidth={2} />
+              </a>
+            </>
+          ) : (
+            <div className={`work-modal__poster work-modal__poster--coming-soon ${item.posterLayout === 'portrait' ? 'work-modal__poster--portrait' : ''}`}>
+              <img src={item.posterUrl} alt={`${item.title} poster`} />
+              <span>Trailer coming soon</span>
+            </div>
+          )
         )}
 
         <div className="work-modal__block">
