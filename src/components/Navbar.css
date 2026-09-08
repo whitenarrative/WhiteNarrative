@@ -265,8 +265,15 @@ body.nav-menu-open {
     backdrop-filter: blur(18px) saturate(130%);
     -webkit-backdrop-filter: blur(18px) saturate(130%);
     pointer-events: auto;
-    will-change: top, left, width, border-radius;
-    transition: box-shadow 0.35s var(--ease);
+    will-change: top, left, width, min-height, border-radius;
+    transition:
+      top 0.35s var(--ease),
+      left 0.35s var(--ease),
+      width 0.35s var(--ease),
+      min-height 0.35s var(--ease),
+      padding 0.35s var(--ease),
+      border-radius 0.35s var(--ease),
+      box-shadow 0.35s var(--ease);
   }
 
   .nav--home.nav--hero .nav__inner {

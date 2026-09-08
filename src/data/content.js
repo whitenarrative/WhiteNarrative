@@ -254,8 +254,8 @@ export const work = {
       category: 'Released',
       year: 'Not announced',
       synopsis: 'Official teaser for an action thriller written, directed and produced by Yash.',
-      posterUrl: 'https://i.ytimg.com/vi/AG34xy5vbS0/maxresdefault.jpg',
-      watchUrl: 'https://youtu.be/AG34xy5vbS0?si=koSuOqjE7b4OvnsT',
+      posterUrl: 'https://i.ytimg.com/vi/zmtpM_vhmjM/maxresdefault.jpg',
+      watchUrl: 'https://www.youtube.com/watch?v=zmtpM_vhmjM',
       credits: {
         director: 'Yash',
         cinematographer: 'Shivaraj Rathod',
