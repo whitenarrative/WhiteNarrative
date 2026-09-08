@@ -5,7 +5,7 @@ import './WorkGrid.css'
 
 /**
  * Renders a filterable grid of work items. Every card stays mounted at
- * all times — filtering toggles `display: none` via inline style rather
+ * all times - filtering toggles `display: none` via inline style rather
  * than conditional rendering, so the one-shot scroll-reveal observer
  * (which only ever attaches to the cards present at mount) keeps working
  * no matter how the filter is toggled afterwards.

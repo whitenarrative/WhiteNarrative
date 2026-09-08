@@ -10,10 +10,13 @@ export const site = {
   whatsappLink: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
   location: 'Bangalore, India',
   socials: [
-    { name: 'Instagram', icon: 'instagram', href: 'https://instagram.com' },
-    { name: 'LinkedIn', icon: 'linkedin', href: 'https://linkedin.com' },
-    { name: 'YouTube', icon: 'youtube', href: 'https://youtube.com' },
-    { name: 'Vimeo', icon: 'vimeo', href: 'https://vimeo.com' },
+    { name: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/company/white-narrative' },
+    { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/whitenarrative/' },
+    { name: 'Vimeo', icon: 'vimeo', href: 'https://vimeo.com/whitenarrative' },
+    { name: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/@whitenarrative' },
+    { name: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/61592473236654/' },
+    { name: 'Threads', icon: 'threads', href: 'https://www.threads.com/@whitenarrative' },
+    { name: 'X', icon: 'x', href: 'https://x.com/white_narrative' },
   ],
 }
 
@@ -30,7 +33,7 @@ export const hero = {
   titleLines: ['Every film', 'begins with'],
   titleAccent: 'one story.',
   tagline: 'Stories Framed Forever',
-  copy: "Whether it's a feature film, short film, web series, advertisement or music video — White Narrative brings ideas to life, from concept to release.",
+  copy: "Whether it's a feature film, short film, web series, advertisement or music video, White Narrative brings ideas to life, from concept to release.",
   formats: ['Feature Films', 'Short Films', 'Web Series', 'Corporate Films', 'Ad Films', 'Music Videos'],
   ctaPrimary: 'Chat On WhatsApp',
   ctaSecondary: 'See Our Work',
@@ -153,7 +156,7 @@ export const why = {
     {
       icon: 'shield',
       title: 'Transparent Execution',
-      copy: 'Clear communication, honest processes and on-time delivery — no surprises.',
+      copy: 'Clear communication, honest processes and on-time delivery, no surprises.',
     },
     {
       icon: 'infinity',
@@ -380,19 +383,19 @@ export const team = {
 
 export const finalCta = {
   titleLines: ['Your story already exists.', "Let's frame it forever."],
-  copy: "Tell us what you're dreaming of — a film, a series, a campaign — and we'll help you take the first step.",
+  copy: "Tell us what you're dreaming of, a film, a series, a campaign, and we'll help you take the first step.",
   button: 'Contact Us',
 }
 
 export const workPage = {
   eyebrow: 'Gallery',
   title: ['Every project,', 'one archive.'],
-  sub: 'Browse by format, or see everything we have framed — features, shorts, series, brand films and music videos.',
+  sub: 'Browse by format, or see everything we have framed: features, shorts, series, brand films and music videos.',
 }
 
 export const contactPage = {
   eyebrow: 'Contact',
   title: ['Let’s talk about', 'your project.'],
-  sub: 'Reach out directly — WhatsApp is the fastest way to hear back from us.',
+  sub: 'Reach out directly. WhatsApp is the fastest way to hear back from us.',
   detailsTitle: 'Reach Us Directly',
 }

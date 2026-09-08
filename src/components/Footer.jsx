@@ -14,7 +14,7 @@ export default function Footer() {
           <Logo />
           <p>
             A film production studio crafting features, shorts, series, brand films and music
-            videos — from the first spark of an idea to the night it meets its audience.
+            videos, from the first spark of an idea to the night it meets its audience.
           </p>
         </div>
 
@@ -74,6 +74,12 @@ export default function Footer() {
         <div className="container footer__bar-inner">
           <p>© {year} White Narrative Studios. All rights reserved.</p>
           <p className="footer__tag">{site.tagline}</p>
+          <p className="footer__credit">
+            Developed by{' '}
+            <a href="https://foliocustoms.com" target="_blank" rel="noreferrer">
+              foliocustoms
+            </a>
+          </p>
         </div>
       </div>
     </footer>

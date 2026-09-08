@@ -17,8 +17,56 @@
   object-fit: cover;
 }
 
+.hero__formats {
+  position: absolute;
+  bottom: 116px;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  width: max-content;
+  max-width: calc(100% - 48px);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-head);
+  font-size: clamp(10px, 0.85vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  transform: translateX(-50%);
+}
+
+.hero__formats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  white-space: nowrap;
+}
+
+.hero__formats b {
+  color: #e5c175;
+  font-weight: 400;
+}
+
 @media (max-width: 640px) {
   .hero {
     min-height: 460px;
+  }
+
+  .hero__formats {
+    bottom: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 8px 14px;
+    width: calc(100% - 32px);
+    font-size: clamp(9px, 2.5vw, 11px);
+    letter-spacing: 0.12em;
+    text-align: center;
+  }
+
+  .hero__formats b {
+    display: none;
   }
 }

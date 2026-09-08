@@ -198,7 +198,7 @@
          inkscape:collect="always"
          stdDeviation="0.58699171"
          id="feGaussianBlur105" /></filter></defs><rect
-     style="display:inline;fill:#000000;stroke:none;stroke-width:25"
+   style="display:none;fill:#000000;stroke:none;stroke-width:25"
      id="rect6"
      width="529.16663"
      height="529.16669"

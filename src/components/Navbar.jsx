@@ -14,15 +14,69 @@ export default function Navbar() {
   const [theme, toggleTheme] = useTheme()
   const menuRef = useRef(null)
   const burgerRef = useRef(null)
+  const headerRef = useRef(null)
 
   const isHome = location.pathname === '/'
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    let frameId = null
+    let wasPinned = null
+
+    const updateNavigation = () => {
+      frameId = null
+      const header = headerRef.current
+      if (!header) return
+
+      if (!isHome) {
+        const pinned = window.scrollY > 24
+        if (pinned !== wasPinned) {
+          wasPinned = pinned
+          setScrolled(pinned)
+        }
+        return
+      }
+
+      const hero = document.querySelector('.hero')
+      if (!hero) return
+
+      const heroBounds = hero.getBoundingClientRect()
+      const navHeight = 64
+      const heroTop = heroBounds.bottom - navHeight - 26
+      const transitionDistance = 160
+      const rawProgress = Math.min(1, Math.max(0, (transitionDistance - heroTop) / transitionDistance))
+      const easedProgress = rawProgress * rawProgress * (3 - 2 * rawProgress)
+      const compactWidth = Math.min(1120, window.innerWidth - 48)
+      const width = compactWidth + (window.innerWidth - compactWidth) * easedProgress
+      const pinned = heroTop <= 0
+
+      header.style.setProperty('--nav-top', `${Math.max(0, heroTop)}px`)
+      header.style.setProperty('--nav-left', `${(window.innerWidth - width) / 2}px`)
+      header.style.setProperty('--nav-width', `${width}px`)
+      header.style.setProperty('--nav-radius', `${16 * (1 - easedProgress)}px`)
+      header.style.setProperty('--nav-progress', easedProgress)
+      header.style.setProperty('--nav-glass-alpha', 0.2 * (1 - easedProgress))
+      header.style.setProperty('--nav-glass-edge-alpha', 0.06 * (1 - easedProgress))
+      header.style.setProperty('--nav-dark-alpha', 0.94 * easedProgress)
+
+      if (pinned !== wasPinned) {
+        wasPinned = pinned
+        setScrolled(pinned)
+      }
+    }
+
+    const requestUpdate = () => {
+      if (frameId === null) frameId = requestAnimationFrame(updateNavigation)
+    }
+
+    updateNavigation()
+    window.addEventListener('scroll', requestUpdate, { passive: true })
+    window.addEventListener('resize', requestUpdate)
+    return () => {
+      if (frameId !== null) cancelAnimationFrame(frameId)
+      window.removeEventListener('scroll', requestUpdate)
+      window.removeEventListener('resize', requestUpdate)
+    }
+  }, [isHome])
 
   useEffect(() => {
     if (!isHome) return undefined
@@ -71,11 +125,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`nav ${isHome && !scrolled && !open ? 'nav--hero' : ''} ${scrolled ? 'nav--solid' : ''} ${open ? 'nav--menu-open' : ''}`}
+      ref={headerRef}
+      className={`nav ${isHome ? 'nav--home' : 'nav--page'} ${isHome && !scrolled && !open ? 'nav--hero' : ''} ${scrolled ? 'nav--solid' : ''} ${open ? 'nav--menu-open' : ''}`}
     >
+      {isHome && (
+        <div className="nav__hero-logo">
+          <Logo onClick={() => setOpen(false)} />
+        </div>
+      )}
       <div className="container nav__inner">
         <Logo onClick={() => setOpen(false)} />
-
         {open && <button type="button" className="nav__backdrop" aria-label="Close menu" onClick={() => setOpen(false)} />}
 
         <nav

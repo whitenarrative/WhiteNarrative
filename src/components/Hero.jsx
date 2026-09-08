@@ -1,4 +1,5 @@
 import './Hero.css'
+import { hero } from '../data/content.js'
 
 const heroDesktopVideoUrl = '/hero-reel-desktop.mp4'
 const heroMobileVideoUrl = '/hero-reel-mobile.mp4'
@@ -20,6 +21,14 @@ export default function Hero() {
           <source media="(max-width: 640px)" src={heroMobileVideoUrl} type="video/mp4" />
           <source src={heroDesktopVideoUrl} type="video/mp4" />
         </video>
+      </div>
+      <div className="hero__formats" aria-label="Production formats">
+        {hero.formats.map((format, index) => (
+          <span key={format}>
+            {format}
+            {index < hero.formats.length - 1 && <b aria-hidden="true">/</b>}
+          </span>
+        ))}
       </div>
     </section>
   )
