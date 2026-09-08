@@ -50,6 +50,15 @@
   font-weight: 400;
 }
 
+:root[data-theme='light'] .hero__formats {
+  color: #2a2418;
+  text-shadow: 0 1px 5px rgba(255, 255, 255, 0.76);
+}
+
+:root[data-theme='light'] .hero__formats b {
+  color: #7a5720;
+}
+
 @media (max-width: 640px) {
   .hero {
     min-height: 460px;

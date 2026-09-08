@@ -131,7 +131,7 @@ export const services = {
       copy: 'Fine tuning the audio and ensuring a balance between the music and sound effects while ensuring dialogues are audible.',
     },
     {
-      icon: 'wand',
+      icon: 'cubeViewport',
       title: '3D Animation',
       copy: 'Bringing depth, movement and dimension to stories that live beyond the lens.',
     },

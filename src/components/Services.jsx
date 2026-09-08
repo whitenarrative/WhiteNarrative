@@ -3,6 +3,8 @@ import { services } from '../data/content.js'
 import Icon from './Icon.jsx'
 import './Services.css'
 
+const cubeViewportIconUrl = 'https://www.svgrepo.com/show/470603/cube-viewport.svg'
+
 export default function Services() {
   return (
     <section id={services.id} className="services" aria-label="Services">
@@ -26,7 +28,11 @@ export default function Services() {
               style={{ '--d': `${(i % 3) * 0.05}s` }}
             >
               <div className="services__card-inner">
-                <Icon name={item.icon} size={22} strokeWidth={1.4} />
+                {item.icon === 'cubeViewport' ? (
+                  <img className="services__cube-icon" src={cubeViewportIconUrl} width="22" height="22" alt="" />
+                ) : (
+                  <Icon name={item.icon} size={22} strokeWidth={1.4} />
+                )}
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
               </div>
