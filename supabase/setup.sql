@@ -91,7 +91,11 @@ alter table public.admin_emails enable row level security;
 revoke all on table public.projects from anon, authenticated;
 revoke all on table public.admin_emails from anon, authenticated;
 
-grant select on table public.projects to anon;
+grant select (
+  id, title, slug, category, type, year, synopsis, poster_url, poster_layout,
+  watch_url, director, cinematographer, editor, colorist, music_director,
+  cast_members, links, is_featured, is_published, display_order, created_at
+) on table public.projects to anon;
 grant select, insert, update, delete on table public.projects to authenticated;
 
 drop policy if exists "Published projects are publicly readable" on public.projects;
@@ -174,6 +178,9 @@ using (bucket_id = 'project-media' and (select public.is_admin()));
 
 comment on table public.projects is
   'Portfolio projects managed by the separate admin application and read by the public website.';
+
+comment on column public.projects.missing_info is
+  'Private administrator notes. SELECT permission is intentionally withheld from anon.';
 
 -- ---------------------------------------------------------------------------
 -- Initial portfolio import
@@ -274,26 +281,7 @@ values
     '[{"label":"Watch on YouTube","href":"https://youtu.be/2LBzLLle5QE"}]'::jsonb,
     null, false, true, 90
   )
-on conflict (slug) do update set
-  title = excluded.title,
-  category = excluded.category,
-  type = excluded.type,
-  year = excluded.year,
-  synopsis = excluded.synopsis,
-  poster_url = excluded.poster_url,
-  poster_layout = excluded.poster_layout,
-  watch_url = excluded.watch_url,
-  director = excluded.director,
-  cinematographer = excluded.cinematographer,
-  editor = excluded.editor,
-  colorist = excluded.colorist,
-  music_director = excluded.music_director,
-  cast_members = excluded.cast_members,
-  links = excluded.links,
-  missing_info = excluded.missing_info,
-  is_featured = excluded.is_featured,
-  is_published = excluded.is_published,
-  display_order = excluded.display_order;
+on conflict (slug) do nothing;
 
 -- Administrator access is restricted to the authenticated Supabase user whose
 -- email is abinavsrinivas517@gmail.com. Create that user in Authentication > Users.

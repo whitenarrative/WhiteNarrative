@@ -125,8 +125,6 @@ export default function WorkModal({ item, onClose }) {
             <p className="work-modal__unavailable">No additional public listing is currently available.</p>
           )}
         </div>
-
-        {item.missingInfo && <p className="work-modal__missing">Note: {item.missingInfo}</p>}
       </div>
     </div>
   )

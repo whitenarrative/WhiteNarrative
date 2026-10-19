@@ -20,7 +20,6 @@ const projectFields = [
   'music_director',
   'cast_members',
   'links',
-  'missing_info',
   'is_featured',
   'display_order',
 ].join(',')
@@ -69,7 +68,6 @@ function normalizeProject(project) {
         .map((link) => ({ label: link?.label, href: safeExternalUrl(link?.href) }))
         .filter((link) => link.label && link.href)
       : [],
-    missingInfo: project.missing_info,
     isFeatured: project.is_featured,
     displayOrder: project.display_order,
   }

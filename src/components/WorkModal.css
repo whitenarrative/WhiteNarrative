@@ -222,18 +222,11 @@
   color: var(--gold);
 }
 
-.work-modal__unavailable,
-.work-modal__missing {
+.work-modal__unavailable {
   margin-top: 10px;
   font-size: 13px;
   line-height: 1.55;
   color: var(--muted);
-}
-
-.work-modal__missing {
-  padding: 14px 16px;
-  border-left: 2px solid var(--gold);
-  background: color-mix(in srgb, var(--gold) 7%, transparent);
 }
 
 @media (max-width: 560px) {

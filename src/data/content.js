@@ -201,7 +201,6 @@ export const work = {
         musicDirector: 'Sarovar R',
       },
       cast: ['Arunachalam', 'Megha Kammaje'],
-      missingInfo: 'A trailer, release date, and public external listings have not been announced yet.',
     },
     {
       title: 'Hoovadagitthi',
@@ -218,7 +217,6 @@ export const work = {
         musicDirector: 'South End Circle',
       },
       cast: ['Deekshith N C', 'Anoushka Gupta', 'Rajalakshmi', 'Sachin'],
-      missingInfo: 'A director credit and public IMDb or booking listing were not found.',
     },
     {
       title: 'Byaate',
@@ -235,7 +233,6 @@ export const work = {
         musicDirector: 'Prince Joseph',
       },
       cast: ['Karthik', 'Shruthi', 'Selvan'],
-      missingInfo: 'Editor, colorist, IMDb, and booking links were not listed publicly.',
     },
     {
       title: 'Agalike',
@@ -252,7 +249,6 @@ export const work = {
         musicDirector: 'South End Circle',
       },
       cast: ['Deekshith N C', 'Anoushka Gupta'],
-      missingInfo: 'An individual director credit and public IMDb or booking listing were not found.',
     },
     {
       title: 'Jackfruit',
@@ -269,7 +265,6 @@ export const work = {
         musicDirector: 'Prince Joseph',
       },
       cast: ['Sri Raghu', 'Rakesh', 'Prajwal', 'Adarsh Raj', 'Sanjay Ram', 'Deepak', 'Harshith', 'Sagar Gumballi', 'Venkatesh', 'Akash'],
-      missingInfo: 'Only the teaser is publicly available; a release year, IMDb, and booking listing were not found.',
     },
     {
       title: 'A Day in the Life of a Dispatcher in India',
@@ -286,7 +281,6 @@ export const work = {
         musicDirector: 'Not publicly credited',
       },
       cast: ['Zubair'],
-      missingInfo: 'The public description only identifies Zubair and the project synopsis; no production credits or external listings were found.',
     },
     {
       title: 'Mind Reader',
@@ -303,7 +297,6 @@ export const work = {
         musicDirector: 'Chandan Heggade, Arjun Heggade',
       },
       cast: ['Yashwanth Shetty', 'Dhanu Harsha', 'Shashank'],
-      missingInfo: 'Public IMDb and booking links were not found.',
     },
     {
       title: 'Onty Bunty Love Story',
