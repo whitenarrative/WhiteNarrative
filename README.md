@@ -31,12 +31,38 @@ npm run preview  # serve the production bundle
 `/contact` work on Vercel (client-side routing needs this — without it, a refresh
 on those routes 404s).
 
+## Supabase projects
+
+Portfolio projects are read from the `projects` table in Supabase. The browser
+uses only the project's publishable key and only requests rows where
+`is_published = true`. It never creates, updates, or deletes project records.
+
+1. Run `supabase/setup.sql` in the Supabase SQL editor. It creates the schema,
+   RLS policies, media bucket, admin allowlist, and imports the existing portfolio.
+2. Add and maintain projects through the separately deployed `admin/` application.
+3. Set the variables from `.env.example` in Vercel before deploying. A local
+   `.env.local` is intentionally ignored by Git.
+
+Mark up to three projects with `is_featured = true` for the home-page preview.
+All published projects appear on `/work`, ordered by `display_order` and then by
+creation date. `poster_url` may be a public Supabase Storage URL or any public
+image URL. Each object in `links` should use `{ "label": "…", "href": "…" }`.
+
+The publishable key is intentionally safe to expose in a browser bundle. Never
+put a Supabase service-role key in this repository or in a `VITE_` variable.
+
+The complete database, authentication, recovery, separate admin deployment and
+verification procedure is documented in `admin/README.md`. That directory is
+intentionally Git-ignored and must be deployed independently from this site.
+
 ## Structure
 
 ```
 src/
-  data/content.js        # ALL site copy lives here — edit this to change text
-  hooks/useReveal.js     # IntersectionObserver scroll-reveal (one-shot per page)
+  data/content.js        # Static site copy (projects are in Supabase)
+  data/projects.js       # Read-only Supabase project query and data mapping
+  hooks/useProjects.js   # Async loading state for project lists
+  hooks/useReveal.js     # Scroll reveal, including asynchronously loaded cards
   hooks/useTheme.js      # light/dark theme state, persisted to localStorage
   pages/                 # Home / WorkPage / ContactPage — route-level components
   components/            # Navbar, Footer, ScrollManager, and per-section pieces
@@ -67,9 +93,8 @@ the button-fill pair and need to stay readable regardless of page theme.
 - **Social links** — `site.socials` in `src/data/content.js`; each entry needs its
   real profile URL.
 - **Stats** (50+ / 25+) — from the design mockups; confirm real numbers.
-- **Our Work** — each item's `synopsis` is sample copy; `whatWeDid` is a generic
-  placeholder per category (`src/data/content.js`) — replace both with the real
-  per-project credits.
+- **Our Work** — review the initial records in `supabase/setup.sql`; future
+  project copy, credits, links, and publishing state belong to the admin app.
 - **Team portraits and bios** — currently monogram avatars with placeholder
   quotes/notes; swap in real photos and copy by editing `Team.jsx` and the `team`
   export in `src/data/content.js`.

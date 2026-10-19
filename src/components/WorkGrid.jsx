@@ -36,7 +36,7 @@ export default function WorkGrid({ items, filterable = false }) {
       <div className="work-grid">
         {items.map((item, i) => (
           <div
-            key={item.title}
+            key={item.id || item.slug || item.title}
             className="reveal"
             style={{
               '--d': `${(i % 3) * 0.06}s`,

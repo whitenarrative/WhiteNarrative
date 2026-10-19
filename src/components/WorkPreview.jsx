@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom'
 import { work } from '../data/content.js'
+import useProjects from '../hooks/useProjects.js'
 import Icon from './Icon.jsx'
 import WorkGrid from './WorkGrid.jsx'
+import WorkStatus from './WorkStatus.jsx'
 import './WorkPreview.css'
 
 export default function WorkPreview() {
+  const { projects, loading, error } = useProjects({ featured: true, limit: 3 })
+
   return (
     <section id={work.id} className="work-preview" aria-label="Our work">
       <div className="container">
@@ -24,7 +28,11 @@ export default function WorkPreview() {
           </Link>
         </div>
 
-        <WorkGrid items={work.items.slice(0, 3)} />
+        {projects.length > 0 ? (
+          <WorkGrid items={projects} />
+        ) : (
+          <WorkStatus loading={loading} error={error} />
+        )}
       </div>
     </section>
   )

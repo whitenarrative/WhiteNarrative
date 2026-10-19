@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import useReveal from '../hooks/useReveal.js'
 import { work, workPage } from '../data/content.js'
+import useProjects from '../hooks/useProjects.js'
 import WorkGrid from '../components/WorkGrid.jsx'
+import WorkStatus from '../components/WorkStatus.jsx'
 import Icon from '../components/Icon.jsx'
 import './WorkPage.css'
 
 export default function WorkPage() {
   useReveal()
+  const { projects, loading, error } = useProjects()
 
   return (
     <section className="work-page" aria-label="Our work">
@@ -22,7 +25,11 @@ export default function WorkPage() {
         </div>
 
         <div className="work-page__grid reveal" style={{ '--d': '0.08s' }}>
-          <WorkGrid items={work.items} filterable />
+          {projects.length > 0 ? (
+            <WorkGrid items={projects} filterable />
+          ) : (
+            <WorkStatus loading={loading} error={error} />
+          )}
         </div>
 
         <div className="work-page__cta reveal">

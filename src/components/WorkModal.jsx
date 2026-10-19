@@ -94,11 +94,11 @@ export default function WorkModal({ item, onClose }) {
           <div className="work-modal__block work-modal__credits">
             <h3>Credits</h3>
             <dl>
-              <div><dt>Director</dt><dd>{item.credits.director}</dd></div>
-              <div><dt>Cinematographer</dt><dd>{item.credits.cinematographer}</dd></div>
-              <div><dt>Editor</dt><dd>{item.credits.editor}</dd></div>
-              <div><dt>Colorist</dt><dd>{item.credits.colorist}</dd></div>
-              <div><dt>Music Director</dt><dd>{item.credits.musicDirector}</dd></div>
+              {item.credits.director && <div><dt>Director</dt><dd>{item.credits.director}</dd></div>}
+              {item.credits.cinematographer && <div><dt>Cinematographer</dt><dd>{item.credits.cinematographer}</dd></div>}
+              {item.credits.editor && <div><dt>Editor</dt><dd>{item.credits.editor}</dd></div>}
+              {item.credits.colorist && <div><dt>Colorist</dt><dd>{item.credits.colorist}</dd></div>}
+              {item.credits.musicDirector && <div><dt>Music Director</dt><dd>{item.credits.musicDirector}</dd></div>}
             </dl>
           </div>
         )}
